@@ -1,0 +1,5 @@
+https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS
+
+https://dev.to/aws-builders/how-to-apply-aws-ec2-with-boto3-python-3jkk
+https://realpython.com/python-boto3-aws-s3/
+https://medium.com/dataman-in-ai/run-aws-boto3-9661b415f36e
