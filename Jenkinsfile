@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+
+    stages{
+        stage('Clean WS') {
+            steps {
+                cleanWs()
+            }
+        }
+    
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', 
+                    branches: [[name: '*/main']],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [[$class: 'CleanCheckout']],
+                    submoduleCfg: [], 
+                    userRemoteConfigs: [[url: 'https://github.com/shubham103/GoProj1.git']]
+                ])
+            }
+        }
+        stage("Run Test"){
+            steps{
+                    sh "ls"
+                    sh(script:"go run main.go")
+                
+            }
+        }
+        stage("Run Build"){
+            steps{
+                    
+                    sh(script:"go build main.go")
+                    sh "mv main main_${BUILD_NUMBER}"
+                    sh "ls"
+                
+            }
+        }
+        stage("Publish in S3"){
+            steps{
+                    
+                s3Upload(profileName: "jenkins-s3-test-123",
+                        dontWaitForConcurrentBuildCompletion: true,
+                        consoleLogLevel: 'INFO',
+                        pluginFailureResultConstraint: 'FAILURE',
+                        dontSetBuildResultOnFailure: false,
+                        userMetadata: [[
+                            key: "build",
+                            value: "release"
+                            ]],
+                        entries: [[
+                             bucket: "jenkins-s3-test-123", 
+                             sourceFile: "main_${BUILD_NUMBER}", 
+                             selectedRegion: "us-east-1"
+                        ]])
+                
+            }
+        }
+    }
+}
