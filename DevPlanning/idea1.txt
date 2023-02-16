@@ -1,0 +1,8 @@
+How to make github actions to wait for jenkins to finish its job. 
+
+
+ - we can make a python script to wait until the jobs latest build is not completed.
+   
+   
+How to get build info's from jenkins latest builds   
+ - https://stackoverflow.com/questions/35920756/is-there-any-jenkins-api-to-get-artifacts-name-and-download-it
