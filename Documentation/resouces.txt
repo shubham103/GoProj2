@@ -3,3 +3,6 @@ https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS
 https://dev.to/aws-builders/how-to-apply-aws-ec2-with-boto3-python-3jkk
 https://realpython.com/python-boto3-aws-s3/
 https://medium.com/dataman-in-ai/run-aws-boto3-9661b415f36e
+
+
+https://devops81.com/2020/01/04/uploading-jenkins-artifacts-to-aws-s3/#:~:text=Once%20S3%20Publisher%20is%20installed,we%20will%20upload%20the%20artifact
