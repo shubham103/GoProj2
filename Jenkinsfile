@@ -15,7 +15,7 @@ pipeline {
                     doGenerateSubmoduleConfigurations: false,
                     extensions: [[$class: 'CleanCheckout']],
                     submoduleCfg: [], 
-                    userRemoteConfigs: [[url: 'https://github.com/shubham103/GoProj1.git']]
+                    userRemoteConfigs: [[url: 'https://github.com/shubham103/GoProj2.git']]
                 ])
             }
         }
