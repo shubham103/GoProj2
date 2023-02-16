@@ -6,3 +6,8 @@ https://medium.com/dataman-in-ai/run-aws-boto3-9661b415f36e
 
 
 https://devops81.com/2020/01/04/uploading-jenkins-artifacts-to-aws-s3/#:~:text=Once%20S3%20Publisher%20is%20installed,we%20will%20upload%20the%20artifact
+
+
+
+run python boto3 from githubactions
+https://github.com/benkehoe/github-actions-boto3-demo/blob/main/.github/workflows/aws_config
