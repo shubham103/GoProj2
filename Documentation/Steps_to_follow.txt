@@ -1,0 +1,12 @@
+create ec2
+in ec2 install jenkins
+in ec2 install go
+in ec2 install git package
+in ec2 users create a new acces key
+in s3 create a bucket
+in jenkins install s3-plugin
+in jenkins sys config. connect the s3 bucket
+in ec2 create ssh-keygen
+in github add the ssh pub key
+in jenkins creat a pipeline and connect it to github  repo
+in jenkins pipeline change the setting to use  a jenkinsfile from repo
