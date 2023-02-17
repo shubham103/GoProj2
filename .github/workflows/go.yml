@@ -21,4 +21,7 @@ jobs:
 
     - name: Build
       run: go build main.go
+    
+    - name: Trigger pipeline
+      run: curl http://3.89.219.152:8080//job/build/build?token=test_build
 
