@@ -15,6 +15,7 @@ client = boto3.resource('ec2')
 
 instance = client.create_instances(
                 ImageId='ami-0ff2cb586a7231532',
+                InstanceType='t2.micro',
                 MaxCount=1,
                 MinCount=1,
                 KeyName='ec2-jenkins'
