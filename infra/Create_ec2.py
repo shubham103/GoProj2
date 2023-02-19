@@ -13,4 +13,11 @@ import boto3
 
 ec2 = boto3.resource('ec2')
 
-print(ec2)
+instances = ec2.create_instances(
+        ImageId="ami-0ff2cb586a7231532",
+        MinCount=1,
+        MaxCount=1,
+        InstanceType="t2.micro",
+        KeyName="ec2-jenkins"
+    )
+     
