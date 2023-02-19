@@ -21,8 +21,7 @@ instance = client.create_instances(
                 )
      
 '''
-  
-  import boto3
+import boto3
 
 ec2 = boto3.resource('ec2', region_name='us-east-1', aws_access_key_id='AKIAQJO7ZSYXRPIMM2W4', aws_secret_access_key='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')
 
