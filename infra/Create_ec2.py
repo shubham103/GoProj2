@@ -13,7 +13,7 @@ import boto3
 
 client = boto3.client('ec2')
 
-instance = ec2.create_instances(
+instance = client.create_instances(
                 ImageId='ami-0ff2cb586a7231532',
                 MaxCount=1,
                 MinCount=1,
