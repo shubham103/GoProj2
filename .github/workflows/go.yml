@@ -15,13 +15,17 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.19
-
-    - name: Run
-      run: go run main.go
-
-    - name: Build
-      run: go build main.go
+    - uses: actions/setup-python@v2
+        with:
+          python-version: 3
+    
+    - name: install
+      run: pip install boto3
+    
+    - name: run
+      run: python infra/Create_ec2.py
     
     - name: Trigger pipeline
-      run: curl http://3.89.219.152:8080//job/build/build?token=test_build
+      run: curl http://54.87.70.255:8080/job/test_build/build?token=test1234 --user shubham:117f999f14443dbe7008faf83f89bcced7
+
 
