@@ -8,6 +8,9 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    env:
+      # Option 1: set the config file path. As many roles as you want!
+      AWS_CONFIG_FILE: infra/aws_config
     steps:
     - uses: actions/checkout@v3
 
