@@ -11,6 +11,6 @@ return the public IP address of ec2 created
 
 import boto3
 
-ec2 = boto3.client('ec2')
+ec2 = boto3.service('ec2')
 
 print(ec2)
