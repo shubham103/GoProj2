@@ -27,7 +27,7 @@ ec2 = boto3.resource('ec2', region_name='us-east-1', aws_access_key_id='AKIAQJO7
 
 instance = ec2.create_instances(
     ImageId='ami-0ff2cb586a7231532',
-    InstanceType='t2.micro'',
+    InstanceType='t2.micro',
     KeyName='ec2-jenkins',
     MinCount=1,
     MaxCount=1
