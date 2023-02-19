@@ -23,12 +23,12 @@ instance = client.create_instances(
 '''
 import boto3
 
-ec2 = boto3.resource('ec2', region_name='us-west-2', aws_access_key_id='AKIAQJO7ZSYXRPIMM2W4', aws_secret_access_key='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')
+ec2 = boto3.resource('ec2', region_name='us-east-1', aws_access_key_id='AKIAV5PIJKG5PVDR7NNS', aws_secret_access_key='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')
 
 instance = ec2.create_instances(
-    ImageId='ami-0ff2cb586a7231532',
+    ImageId='ami-0dfcb1ef8550277af',
     InstanceType='t2.micro',
-    KeyName='ec2-jenkins',
+    KeyName='jenkins-ec2',
     MinCount=1,
     MaxCount=1
 )
