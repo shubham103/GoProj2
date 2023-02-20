@@ -37,7 +37,7 @@ print(instance[0].id)
 
 
 import boto3 as bt
-from pprint import pprint
+import os
 
 client = bt.client('ec2', region_name='us-east-1', aws_access_key_id='AKIA3MHTZCNPBJU2T5GE', aws_secret_access_key='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')
 
@@ -56,7 +56,9 @@ def getAll():
     instances = client.describe_instances()
     for inst in instances['Reservations']:
         if len(inst['Instances'][0]['NetworkInterfaces']) != 0:
-            print(inst['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicIp'])
+            public_ip = inst['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicIp']
+            print(f"::set-output name=public_ip::{public_ip}")
+            
 
 getAll()
 
