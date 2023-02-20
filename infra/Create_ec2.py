@@ -57,7 +57,7 @@ def getAll():
     for inst in instances['Reservations']:
         if len(inst['Instances'][0]['NetworkInterfaces']) != 0:
             public_ip = inst['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicIp']
-            print(f"::set-output name=public_ip::{public_ip}")
+            print(f"public_ip={public_ip}")
             
 
 getAll()
