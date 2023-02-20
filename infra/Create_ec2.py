@@ -20,10 +20,10 @@ instance = client.create_instances(
                 KeyName='ec2-jenkins'
                 )
      
-'''
+
 import boto3
 
-ec2 = boto3.resource('ec2', region_name='us-east-1', aws_access_key_id='AKIAV5PIJKG5PVDR7NNS', aws_secret_access_key='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')
+ec2 = boto3.resource('ec2', region_name='us-east-1', aws_access_key_id='AKIA3MHTZCNPBJU2T5GE', aws_secret_access_key='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')
 
 instance = ec2.create_instances(
     ImageId='ami-0b78ca23ea18811c5',
@@ -32,5 +32,32 @@ instance = ec2.create_instances(
     MinCount=1,
     MaxCount=1
 )
-
 print(instance[0].id)
+'''
+
+
+import boto3 as bt
+from pprint import pprint
+
+client = bt.client('ec2', region_name='us-east-1', aws_access_key_id='AKIA3MHTZCNPBJU2T5GE', aws_secret_access_key='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')
+
+def create():
+    instances = client.create_instances(
+        ImageId='ami-0dfcb1ef8550277af',
+        InstanceType='t2.micro',
+        KeyName='test-ami',
+        MinCount=1,
+        MaxCount=1
+        )
+    print(instances)
+
+
+def getAll():
+    instances = client.describe_instances()
+    for inst in instances['Reservations']:
+        if len(inst['Instances'][0]['NetworkInterfaces']) != 0:
+            print(inst['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicIp'])
+
+getAll()
+
+
