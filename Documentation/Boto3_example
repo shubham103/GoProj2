@@ -1,0 +1,23 @@
+bob@ubuntu-host ~ ➜  ls
+
+    aws_config  test.py
+
+bob@ubuntu-host ~ ➜  cat aws_config 
+
+    [default]
+    aws_access_key_id = AKIA3MHTZCNPBJU2T5GE
+    aws_secret_access_key = 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
+    region = us-east-1
+
+
+bob@ubuntu-host ~ ➜cat test.py 
+
+    import boto3 as bt
+    client = bt.resource('ec2')
+    instances = client.create_instances(
+            ImageId='ami-0dbe83ed366672e90',
+            InstanceType='t2.micro',
+            KeyName='test-ami',
+            MinCount=1,
+            MaxCount=1
+            )
