@@ -26,6 +26,6 @@ jobs:
       run: python infra/Create_ec2.py
     
     - name: Trigger pipeline
-      run: curl http://54.87.70.255:8080/job/test_build/build?token=test1234 --user shubham:117f999f14443dbe7008faf83f89bcced7
+      run: curl http://http://34.238.83.188/:8080/job/test_build/build?token=test1234 --user shubham:11213508cf47a51366c8d2bceb33c718d2
 
 
