@@ -6,7 +6,16 @@ in ec2 users create a new acces key
 in s3 create a bucket
 in jenkins install s3-plugin
 in jenkins sys config. connect the s3 bucket
-in ec2 create ssh-keygen
-in github add the ssh pub key
+in ec2 create ssh-keygen(not compulsory)
+in github add the ssh pub key(not compulsory)
 in jenkins creat a pipeline and connect it to github  repo
 in jenkins pipeline change the setting to use  a jenkinsfile from repo
+in jenkins make the pipeline to be able to trigger remotely
+in jenkins create the access token
+
+create the custom ami of the jenkin ec2 instance
+
+update the custom ami id in infra/Create_ec2.py
+
+
+
