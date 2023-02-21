@@ -40,10 +40,9 @@ import boto3 as bt
 import time
 import os
 
-client = bt.client('ec2', region_name='us-east-1', aws_access_key_id='AKIA3XS5W62NHVG6YFPD', aws_secret_access_key='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')
-
+ec2 = bt.resource('ec2', region_name='us-east-1', aws_access_key_id='AKIA3XS5W62NHVG6YFPD', aws_secret_access_key='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')
 def create():
-    instances = client.create_instances(
+    instances = ec2.create_instances(
         ImageId='ami-00e3b499a61c50fed',
         InstanceType='t2.micro',
         KeyName=' jenkins-gitlab',
@@ -52,7 +51,7 @@ def create():
         )
     print(instances)
 
-
+client = bt.client('ec2', region_name='us-east-1', aws_access_key_id='AKIA3XS5W62NHVG6YFPD', aws_secret_access_key='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')
 def getAll():
     instances = client.describe_instances()
     for inst in instances['Reservations']:
