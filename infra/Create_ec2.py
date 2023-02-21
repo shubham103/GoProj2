@@ -45,7 +45,7 @@ def create():
     instances = ec2.create_instances(
         ImageId='ami-00e3b499a61c50fed',
         InstanceType='t2.micro',
-        KeyName=' jenkins-gitlab',
+        KeyName='jenkins-gitlab',
         MinCount=1,
         MaxCount=1
         )
