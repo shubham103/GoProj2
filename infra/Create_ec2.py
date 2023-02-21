@@ -37,15 +37,16 @@ print(instance[0].id)
 
 
 import boto3 as bt
+import time
 import os
 
-client = bt.client('ec2', region_name='us-east-1', aws_access_key_id='AKIA3MHTZCNPBJU2T5GE', aws_secret_access_key='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')
+client = bt.client('ec2', region_name='us-east-1', aws_access_key_id='AKIA3XS5W62NHVG6YFPD', aws_secret_access_key='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')
 
 def create():
     instances = client.create_instances(
-        ImageId='ami-0dfcb1ef8550277af',
+        ImageId='ami-00e3b499a61c50fed',
         InstanceType='t2.micro',
-        KeyName='test-ami',
+        KeyName=' jenkins-gitlab',
         MinCount=1,
         MaxCount=1
         )
@@ -60,6 +61,10 @@ def getAll():
             print(f"public_ip={public_ip}")
             
 
+create()
+
+time.sleep(120)
+            
 getAll()
 
 
