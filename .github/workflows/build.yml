@@ -23,7 +23,7 @@ jobs:
       run: pip install boto3
     
     - name: run
-      run: python infra/Create_ec2.py ${{ secrets.AMI_ID }}>> $GITHUB_OUTPUT
+      run: python infra/Create_ec2.py ${{ secrets.AMI_ID }} ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY }} >> $GITHUB_OUTPUT
       id: get_instances
     
     - name: Trigger pipeline
