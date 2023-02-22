@@ -13,6 +13,11 @@ in jenkins pipeline change the setting to use  a jenkinsfile from repo
 in jenkins make the pipeline to be able to trigger remotely
 in jenkins create the access token
 
+take the security group id and update in secrets
+
+create access token with other option and try to create a intance immedeately so that it start working.. it we delay it will not work
+
+
 create the custom ami of the jenkin ec2 instance
 
 update the custom ami id in infra/Create_ec2.py
