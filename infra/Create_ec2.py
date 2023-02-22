@@ -40,10 +40,11 @@ import boto3 as bt
 import time
 import os
 
-ec2 = bt.resource('ec2', region_name='us-east-1', aws_access_key_id='AKIA3XS5W62NHVG6YFPD', aws_secret_access_key='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')
+ec2 = bt.resource('ec2', region_name='us-east-1', aws_access_key_id='AKIARNK633E7X5SARJFG', aws_secret_access_key='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
+')
 def create():
     instances = ec2.create_instances(
-        ImageId='ami-00e3b499a61c50fed',
+        ImageId='ami-0dfcb1ef8550277af',
         InstanceType='t2.micro',
         KeyName='jenkins-gitlab',
         MinCount=1,
@@ -51,7 +52,8 @@ def create():
         )
     print(instances)
 
-client = bt.client('ec2', region_name='us-east-1', aws_access_key_id='AKIA3XS5W62NHVG6YFPD', aws_secret_access_key='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')
+client = bt.client('ec2', region_name='us-east-1', aws_access_key_id='AKIARNK633E7X5SARJFG', aws_secret_access_key='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
+')
 def getAll():
     instances = client.describe_instances()
     for inst in instances['Reservations']:
