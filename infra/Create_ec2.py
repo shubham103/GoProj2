@@ -10,11 +10,12 @@ return the public IP address of ec2 created
 import boto3 as bt
 import time
 import os
+import sys
 
 ec2 = bt.resource('ec2')
 def create():
     instances = ec2.create_instances(
-        ImageId='ami-06f8a75bec86e113b',
+        ImageId=sys.argv[1],
         InstanceType='t2.micro',
         KeyName='jenkins-gitlab',
         MinCount=1,
