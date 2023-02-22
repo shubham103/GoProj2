@@ -48,7 +48,7 @@ pipeline {
                             value: "release"
                             ]],
                         entries: [[
-                             bucket: "jenkins-s3-test-123", 
+                             bucket: "jenkins-s3-test-1234", 
                              sourceFile: "main_${BUILD_NUMBER}", 
                              selectedRegion: "us-east-1"
                         ]])
