@@ -12,7 +12,7 @@ import time
 import os
 import sys
 
-ec2 = bt.resource('ec2')
+ec2 = bt.resource('ec2', region_name='us-east-1', aws_access_key_id=sys.argv[2], aws_secret_access_key=sys.argv[3])
 def create():
     instances = ec2.create_instances(
         ImageId=sys.argv[1],
@@ -23,7 +23,7 @@ def create():
         )
     print(instances)
 
-client = bt.client('ec2')
+client = bt.client('ec2',  region_name='us-east-1', aws_access_key_id=sys.argv[2], aws_secret_access_key=sys.argv[3])
 def getAll():
     instances = client.describe_instances()
     for inst in instances['Reservations']:
