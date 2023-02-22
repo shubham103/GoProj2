@@ -34,7 +34,7 @@ def getAll():
 
 create()
 
-time.sleep(360)
+time.sleep(200)
             
 getAll()
 
