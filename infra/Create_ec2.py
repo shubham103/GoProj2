@@ -19,7 +19,8 @@ def create():
         InstanceType='t2.micro',
         KeyName='jenkins-gitlab',
         MinCount=1,
-        MaxCount=1
+        MaxCount=1,
+        SecurityGroupIds=[sys.argv[4],],
         )
     print(instances)
 
