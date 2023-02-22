@@ -27,6 +27,6 @@ jobs:
       id: get_instances
     
     - name: Trigger pipeline
-      run: curl "http://${{steps.get_instances.outputs.public_ip}}:8080/job/build/build?token=test1234" --user shubham:11e003a81e39649807ed4a9306081b2c4f
+      run: curl "http://${{steps.get_instances.outputs.public_ip}}:8080/job/build/build?token=test1234" --user shubham:11929ae8da72ed08fd123252027bfb0a4a
 
 
