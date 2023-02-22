@@ -1,4 +1,4 @@
 [default]
-aws_access_key_id = AKIAQJO7ZSYXRPIMM2W4
-aws_secret_access_key = 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
+aws_access_key_id = ${{ secrets.AWS_KEY_ID }}
+aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 region = us-east-1
