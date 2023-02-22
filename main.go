@@ -13,5 +13,5 @@ func main() {
 		<-ticker
         fmt.Printf("\rContainer status :  %d/10", i) // escape sequence is different in this environment
 	}
-	fmt.Println("\nAll pods up and running.")
+	fmt.Println("\nAll pods up and running...")
 }
