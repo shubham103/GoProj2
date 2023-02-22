@@ -40,8 +40,7 @@ import boto3 as bt
 import time
 import os
 
-ec2 = bt.resource('ec2', region_name='us-east-1', aws_access_key_id='AKIARNK633E7X5SARJFG', aws_secret_access_key='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
-')
+ec2 = bt.resource('ec2', region_name='us-east-1', aws_access_key_id='AKIARNK633E7X5SARJFG', aws_secret_access_key='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')
 def create():
     instances = ec2.create_instances(
         ImageId='ami-0dfcb1ef8550277af',
@@ -52,8 +51,7 @@ def create():
         )
     print(instances)
 
-client = bt.client('ec2', region_name='us-east-1', aws_access_key_id='AKIARNK633E7X5SARJFG', aws_secret_access_key='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
-')
+client = bt.client('ec2', region_name='us-east-1', aws_access_key_id='AKIARNK633E7X5SARJFG', aws_secret_access_key='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')
 def getAll():
     instances = client.describe_instances()
     for inst in instances['Reservations']:
