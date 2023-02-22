@@ -43,7 +43,7 @@ import os
 ec2 = bt.resource('ec2', region_name='us-east-1', aws_access_key_id='AKIARNK633E7X5SARJFG', aws_secret_access_key='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')
 def create():
     instances = ec2.create_instances(
-        ImageId='ami-0dfcb1ef8550277af',
+        ImageId='ami-06f8a75bec86e113b',
         InstanceType='t2.micro',
         KeyName='jenkins-gitlab',
         MinCount=1,
