@@ -31,12 +31,14 @@ def getAll():
         if len(inst['Instances'][0]['NetworkInterfaces']) != 0:
             public_ip = inst['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicIp']
             print(f"public_ip={public_ip}")
+            return public_ip
             
 
 create()
 
-time.sleep(200)
-            
-getAll()
+public_ip = getAll()
+
+while True:
+    
 
 
