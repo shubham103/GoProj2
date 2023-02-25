@@ -19,8 +19,10 @@ jobs:
       with:
         python-version: 3
     
-    - name: install
+    - name: install boto3
       run: pip install boto3
+    - name: install requests
+      run: pip isntall requests
     
     - name: run
       run: python infra/Create_ec2.py ${{ secrets.AMI_ID }} ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY }} ${{ secrets.AWS_SECURITY_GROUP_ID }}>> $GITHUB_OUTPUT
