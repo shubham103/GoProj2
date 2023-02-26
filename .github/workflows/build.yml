@@ -25,10 +25,5 @@ jobs:
       run: pip install requests
     
     - name: run
-      run: python infra/Create_ec2.py ${{ secrets.AMI_ID }} ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY }} ${{ secrets.AWS_SECURITY_GROUP_ID }}>> $GITHUB_OUTPUT
+      run: python infra/Create_ec2.py ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY }} ${{ secrets.AMI_ID }}  ${{ secrets.AWS_SECURITY_GROUP_ID }} ${{ secrets.JENKINS_ACCESS_TOKEN }}
       id: get_instances
-    
-    - name: Trigger pipeline
-      run: curl "http://${{steps.get_instances.outputs.public_ip}}:8080/job/build/build?token=test1234" --user shubham:${{ secrets.JENKINS_ACCESS_TOKEN }}
-
-
