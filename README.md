@@ -11,3 +11,4 @@
 - How to make github actions wait for jenkins to finish its job
 - How to use aws Simple Email Service to send mails from jenkins.
 - How to pass the information of ec2 instance created in first step of github action to the last step of github action to terminate the ec2.
+    - created single python script for creating ec2 instance, triggering pipeline , waiting for pipline and then terminating the ec2.
